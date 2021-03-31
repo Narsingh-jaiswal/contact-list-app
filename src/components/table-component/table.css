@@ -1,23 +1,41 @@
-.table-container{
-  width: 50%; 
+.table-container {
+  width: 70%;
 }
-.list_container{
-  display: flex;  
-  align-items: center;
+
+.table-container h1{
+  width: 90%;
+}
+
+table {
+  width: 90%;
   border: 1px solid #cecece;
   border-radius: 5px;
+  border-collapse: collapse;
+}
+
+.list-thead{
+  border-bottom: 1px solid #cecece;  
+  padding: 10px 5px;
+}
+
+.table-data {
+  text-align: left;
+  border-bottom: 1px solid #cecece;  
   padding: 5px;
-  margin: 5px;
-  justify-content: space-between;
 }
-.list_container p{
-  margin: 2px;
+
+.table-data p {
+  margin: 0%;
+  padding: 5px;
 }
-.list_container button{
-  margin: 2px;
-  height: fit-content;
+
+.table-data button {
+  margin: 0%;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  outline: none;
 }
-.li-content{
-  display: flex;
-  align-items: center;
+
+thead {
+  text-align: left;  
 }

@@ -4,19 +4,27 @@ import './App.css';
 import { useState } from "react";
 
 function App() {
-  const [userForm,userFormHandler] = useState({
-    name:'',
-    lastName : '',
-    contact : '',
-    add : false,
-  })    
+  const [userForm, userFormHandler] = useState({
+    firstName: '',
+    lastName: '',
+    contact: '',
+    add: false,
+  })
+  const [edit, setEdit] = useState(false)
 
   return (
-    <>    
-      <h1>Contact list</h1>      
+    <>
       <div className="form-table-contaier">
-        <Form userFormData = {userForm} userFormHandler={userFormHandler} />
-        <Table userData={userForm} handler = {userFormHandler} />
+        <Form
+          userFormData={userForm}
+          userFormHandler={userFormHandler}
+          edit={edit}
+          setEdit={setEdit} />
+        <Table
+          userData={userForm}
+          handler={userFormHandler}
+          edit={edit}
+          setEdit={setEdit} />
       </div>
     </>
   );

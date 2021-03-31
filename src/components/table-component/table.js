@@ -1,56 +1,75 @@
 import React, { useEffect, useState } from 'react'
 import './table.css'
+var userIndex;
 const Table = (props) => {
-  const [table,tablehandler] = useState([])
-  
+  const [table, tablehandler] = useState([])
+
   useEffect(() => {
-    if(props.userData.add){
-      tablehandler([...table,props.userData])
+    const user = props.userData
+    if (props.edit) {
+      table[userIndex] = {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        contact: user.contact
+      }
+    }
+    if (props.userData.add) {
+      tablehandler([...table, props.userData])
       props.handler({
-        name:'',
-        lastName:'',
-        contact:'',
-        add:false
+        firstName: '',
+        lastName: '',
+        contact: '',
       })
     }
   })
 
-  function edit(e){
-    const userIndex = e.target.value    
+  function edit(e) {
+    userIndex = e.target.value
     props.handler({
-      name:table[userIndex].name,
-      lastName:table[userIndex].lastName,
-      contact:table[userIndex].contact
+      firstName: table[userIndex].firstName,
+      lastName: table[userIndex].lastName,
+      contact: table[userIndex].contact,
+      add: false,
     })
+    props.setEdit(true)
+  }
+
+  const deleteData = (e) => {
     table.splice(parseInt(e.target.value), 1)
     tablehandler([...table])
   }
 
-  const deleteData = (e) =>{
-    table.splice(parseInt(e.target.value), 1)
-    tablehandler([...table])
-  }
-
-  const list = table.map((element,index)=>{
-    return(
-      <li key={index} className="list_container">
-        <span className="li-content">
-        <label>Name :</label><p>{element.name}</p>
-        <label>Last Name :</label><p>{element.lastName}</p>
-        <label>Contact :</label><p>{element.contact}</p>
-        </span>
-        <span className="li-content">
-          <button value={index} onClick={edit}>Edit</button>
-          <button value={index} onClick={deleteData}>Delete</button>
-        </span>
-      </li>
+  const list = table.map((element, index) => {
+    return (
+      <tr key={index}>
+        <td className="table-data"><p>{index+1}</p></td>
+        <td className="table-data"><p>{element.firstName}</p></td>
+        <td className="table-data"><p>{element.lastName}</p></td>
+        <td className="table-data"><p>{element.contact}</p></td>
+        <td className="table-data"><button value={index} onClick={edit}>Edit</button></td>
+        <td className="table-data"><button value={index} onClick={deleteData}>Delete</button></td>
+      </tr>
     )
   })
   return (
     <>
       <div className="table-container">
-        <h1>Table Component</h1>      
-        <ul>{list}</ul>  
+        <h1>Contact list</h1>
+        <table>
+          <thead>
+            <tr>
+              <th className="list-thead">#</th>
+              <th className="list-thead">First Name</th>
+              <th className="list-thead">Last Name</th>
+              <th className="list-thead">Contact</th>
+              <th className="list-thead">Edit</th>
+              <th className="list-thead">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {list}
+          </tbody>
+        </table>
       </div>
     </>
   )
