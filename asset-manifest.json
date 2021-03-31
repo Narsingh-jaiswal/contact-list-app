@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/contact-list-app/static/css/main.eea66a44.chunk.css",
+    "main.js": "/contact-list-app/static/js/main.3bc3c552.chunk.js",
+    "main.js.map": "/contact-list-app/static/js/main.3bc3c552.chunk.js.map",
+    "runtime-main.js": "/contact-list-app/static/js/runtime-main.91a5aadb.js",
+    "runtime-main.js.map": "/contact-list-app/static/js/runtime-main.91a5aadb.js.map",
+    "static/js/2.97fd367a.chunk.js": "/contact-list-app/static/js/2.97fd367a.chunk.js",
+    "static/js/2.97fd367a.chunk.js.map": "/contact-list-app/static/js/2.97fd367a.chunk.js.map",
+    "static/js/3.41657071.chunk.js": "/contact-list-app/static/js/3.41657071.chunk.js",
+    "static/js/3.41657071.chunk.js.map": "/contact-list-app/static/js/3.41657071.chunk.js.map",
+    "index.html": "/contact-list-app/index.html",
+    "static/css/main.eea66a44.chunk.css.map": "/contact-list-app/static/css/main.eea66a44.chunk.css.map",
+    "static/js/2.97fd367a.chunk.js.LICENSE.txt": "/contact-list-app/static/js/2.97fd367a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.91a5aadb.js",
+    "static/js/2.97fd367a.chunk.js",
+    "static/css/main.eea66a44.chunk.css",
+    "static/js/main.3bc3c552.chunk.js"
+  ]
+}
