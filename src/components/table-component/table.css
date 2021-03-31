@@ -1,0 +1,23 @@
+.table-container{
+  width: 50%; 
+}
+.list_container{
+  display: flex;  
+  align-items: center;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  justify-content: space-between;
+}
+.list_container p{
+  margin: 2px;
+}
+.list_container button{
+  margin: 2px;
+  height: fit-content;
+}
+.li-content{
+  display: flex;
+  align-items: center;
+}
