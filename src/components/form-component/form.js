@@ -3,7 +3,6 @@ import './form.css'
 const Form = (props) => {
   function add(event) {
     event.preventDefault()
-    const user = props.userFormData
     props.userFormHandler({ ...props.userFormData, add: true })
   }
 
