@@ -42,22 +42,32 @@ const Table = (props) => {
   const list = table.map((element, index) => {
     return (
       <tr key={index}>
-        <td className="table-data"><p>{index+1}</p></td>
+        <td className="table-data"><p>{index + 1}</p></td>
         <td className="table-data"><p>{element.firstName}</p></td>
         <td className="table-data"><p>{element.lastName}</p></td>
         <td className="table-data"><p>{element.contact}</p></td>
-        <td className="table-data"><button value={index} onClick={edit}>Edit</button></td>
-        <td className="table-data"><button value={index} onClick={deleteData}>Delete</button></td>
+        <td className="table-data">
+          <button value={index} onClick={edit}>
+            edit
+            {/* <i className="material-icons">edit</i> */}
+          </button>
+        </td>
+        <td className="table-data">
+          <button value={index} onClick={deleteData}>
+            delete
+            {/* <i className="material-icons">delete</i> */}
+          </button>
+        </td>
       </tr>
     )
   })
   return (
     <>
       <div className="table-container">
-        <h1>Contact list</h1>
+        <h1>User list</h1>
         <table>
           <thead>
-            <tr>
+            <tr className="table-head">
               <th className="list-thead">#</th>
               <th className="list-thead">First Name</th>
               <th className="list-thead">Last Name</th>

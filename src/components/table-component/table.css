@@ -2,7 +2,7 @@
   width: 70%;
 }
 
-.table-container h1{
+.table-container h1 {
   width: 90%;
 }
 
@@ -13,14 +13,19 @@ table {
   border-collapse: collapse;
 }
 
-.list-thead{
-  border-bottom: 1px solid #cecece;  
+.table-head {
+  background-color: #6C757D;
+  color: #CED4DA;
+}
+
+.list-thead {
+  border-bottom: 1px solid #cecece;
   padding: 10px 5px;
 }
 
 .table-data {
   text-align: left;
-  border-bottom: 1px solid #cecece;  
+  border-bottom: 1px solid #cecece;
   padding: 5px;
 }
 
@@ -31,11 +36,15 @@ table {
 
 .table-data button {
   margin: 0%;
+  /* border: none; */
   border: 1px solid #cecece;
   border-radius: 5px;
+  background-color: transparent;
   outline: none;
+  padding: 5px;
+  /* background-color: transparent; */
 }
 
 thead {
-  text-align: left;  
+  text-align: left;
 }

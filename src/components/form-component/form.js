@@ -4,11 +4,7 @@ const Form = (props) => {
   function add(event) {
     event.preventDefault()
     const user = props.userFormData
-    if (user.firstName || user.lastName || user.contact) {
-      props.userFormHandler({ ...props.userFormData, add: true })
-    } else {
-      alert("form is empty")
-    }
+    props.userFormHandler({ ...props.userFormData, add: true })
   }
 
   const update = () => {
@@ -28,10 +24,8 @@ const Form = (props) => {
       contact: '',
     })
   }
-  const error = ''
   const contact = (event) => {
-    console.log(parseInt(event.target.value));
-    if (isNaN(parseInt(event.target.value))) {
+    if (isNaN(event.target.value)) {
       alert("enter only numeric value")
     } else {
       if (props.userFormData.contact.length > 10) {
@@ -40,7 +34,7 @@ const Form = (props) => {
       else {
         props.userFormHandler({
           ...props.userFormData,
-          contact: event.target.value.trimStart()
+          contact: event.target.value.trim()
         })
       }
     }
@@ -49,17 +43,17 @@ const Form = (props) => {
   return (
     <>
       <div className="form-container">
-        <h1>Enter Contact Detail</h1>
+        <h1>Registration Form</h1>
         <form onSubmit={add}>
           <label>First Name :</label>
           <input value={props.userFormData.firstName}
-            onChange={e => props.userFormHandler({ ...props.userFormData, firstName: e.target.value.trimStart() })} />
+            onChange={e => props.userFormHandler({ ...props.userFormData, firstName: e.target.value.trim() })} required />
           <label>Last Name :</label>
           <input value={props.userFormData.lastName}
-            onChange={e => props.userFormHandler({ ...props.userFormData, lastName: e.target.value.trimStart() })} />
+            onChange={e => props.userFormHandler({ ...props.userFormData, lastName: e.target.value.trim() })} required />
           <label>Contact : </label>
           <input value={props.userFormData.contact}
-            onChange={contact} />
+            onChange={contact} required />
           {!props.edit && <button type="submit">Submit</button>}
           {props.edit &&
             <div className="update-section">
