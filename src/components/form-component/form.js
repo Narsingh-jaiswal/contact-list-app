@@ -53,7 +53,12 @@ const Form = (props) => {
           <label>Contact : </label>
           <input value={props.userFormData.contact}
             onChange={contact} required />
-          {!props.edit && <button type="submit">Submit</button>}
+          {!props.edit &&
+            <div className="submit-btn-container">
+              <button type="submit" className="submit-btn">Submit</button>
+              <span className="submit-btn-border"></span>
+            </div>
+          }
           {props.edit &&
             <div className="update-section">
               <button onClick={update}>Update</button>
